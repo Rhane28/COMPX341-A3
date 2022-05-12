@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#check a commit message has been passed in
+[ -z "$1" ] && echo "Please enter a commit message." && exit
+
 echo "CI/CD Pipeline will now run."
 
 #check if npm can be installed
@@ -15,7 +19,7 @@ if npm install ; then
 		echo "Changes will be commited to GitHub"
 		cd ..
 		git add .
-		git commit -m "COMPX341-22A-A3 Commiting from CI/CD Pipeline"
+		git commit -m "$1"
 		git push
 		cd assets
 		
