@@ -10,6 +10,14 @@ echo "Running npm install"
 if npm install ; then 
 	echo "npm install successfull"
 	
+	#check if the current commit will be the final maintenance change
+	if [ "$2" == "final" ] ; then 
+		echo "Commit associated with final maintenance change"
+		echo "Finding all .ts files"
+		find ../ -type f -name '*.ts' -exec sed -i '1s;^;//Rhane Mercado 1529860\n;' {} +
+		echo "All .ts files have been found and commented"
+	fi
+	
 	#check if application can be compiled
 	echo "Running npm run build"
 	if npm run build ; then 
