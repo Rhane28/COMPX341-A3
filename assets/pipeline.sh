@@ -17,7 +17,7 @@ if npm install ; then
 		git add .
 		git commit -m "Commiting from CI/CD Pipeline"
 		git push
-		cd assests
+		cd assets
 		
 		echo "Running npm run start"
 		npm run start
