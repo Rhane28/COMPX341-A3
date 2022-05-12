@@ -15,7 +15,7 @@ if npm install ; then
 		echo "Changes will be commited to GitHub"
 		cd ..
 		git add .
-		git commit -m "Commiting from CI/CD Pipeline"
+		git commit -m "COMPX341-22A-A3 Commiting from CI/CD Pipeline"
 		git push
 		cd assets
 		
